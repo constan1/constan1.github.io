@@ -44,7 +44,7 @@ $(document).ready(function()
 
    function searchAddToNomList(search){
     $.ajax({
-        url:"http://www.omdbapi.com/?s="+search+"&apikey=20936c62",
+        url:"https://www.omdbapi.com/?s="+search+"&apikey=20936c62",
    
        
     }).then(function(data){
