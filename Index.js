@@ -72,7 +72,7 @@ $(document).ready(function()
              movieYear[i]  = data.Search[i].Year;
              moviePoster[i] = data.Search[i].Poster;
    
-           if(Nomination_List[movieTitle[i].toString() + movieYear[i].toString()]===(movieTitle[i] +","+ movieYear[i] +"," + moviePoster[i]))
+           if(Nomination_List[movieTitle[i].toString() + movieYear[i].toString()]===(movieTitle[i] +";"+ movieYear[i] +";" + moviePoster[i]))
            {
                document.getElementById(nominate[i]).style.backgroundColor = "#0C7B52";
                document.getElementById(nominate[i]).style.color = "white";
@@ -95,10 +95,10 @@ $(document).ready(function()
              
               if(document.getElementById(nominate[index]).value === "Nominate")
               {
-               Nomination_List[movieTitle[index].toString() + movieYear[index].toString()]=(movieTitle[index] +","+ movieYear[index] +"," + moviePoster[index]);
+               Nomination_List[movieTitle[index].toString() + movieYear[index].toString()]=(movieTitle[index] +";"+ movieYear[index] +";" + moviePoster[index]);
    
    
-              $(".nomlist").append("<a class='nomlinklist nav-link text-black' href='#' id='"+nominate[index]+"link'>"+movieTitle[index]+","+ movieYear[index]+"</a>");
+              $(".nomlist").append("<a class='nomlinklist nav-link text-black' href='#' id='"+nominate[index]+"link'>"+movieTitle[index]+";"+ movieYear[index]+"</a>");
               
               document.getElementById(nominate[index]).style.backgroundColor = "#0C7B52";
               document.getElementById(nominate[index]).style.color = "white";
@@ -115,9 +115,9 @@ $(document).ready(function()
               {    
                    var selectionindex = nomlist.index(this);
                    var selection = document.getElementsByClassName("nomlinklist")[selectionindex].textContent;
-                   var resultSelection = selection.split(",",2);
+                   var resultSelection = selection.split(";",2);
                    var NominationListSplit = Nomination_List[resultSelection[0] + resultSelection[1]];
-                   var NominationListSplitResult = NominationListSplit.split(",",3);
+                   var NominationListSplitResult = NominationListSplit.split(";",3);
    
                    
                 
