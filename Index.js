@@ -8,11 +8,17 @@
 
 $(document).ready(function()
 {
+    //A global array of MovieTitles for the current search only.
     var movieTitle =[];
+     //A global array of rekease dates for the current search only.
     var movieYear = [];
+    //A global array of string images for the current search only.
     var moviePoster = [];
+    // A global array of appended id's to identify each result in the search - for the current search only.
     var nominate = [];
+    // A global hash of Nomination_List that stores all the nominated (added) movies accross different searches.
     var Nomination_List = {};
+    //The global search result
     var search;
 
 
@@ -21,6 +27,8 @@ $(document).ready(function()
      * @param {string}  pirates
      */
     searchAddToNomList("pirates");
+
+      //We trigger this when the user clicks enter after his search.
 
    $("#searchMovie").keypress(function(event){
        if(event.keyCode === 13)
@@ -43,6 +51,12 @@ $(document).ready(function()
   */
 
    function searchAddToNomList(search){
+       
+    if(search === "")
+    {
+        search = "pirates";
+    }
+    
     $.ajax({
         url:"https://www.omdbapi.com/?s="+search+"&apikey=20936c62",
    
