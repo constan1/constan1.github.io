@@ -10,7 +10,7 @@ $(document).ready(function()
 {
     //A global array of MovieTitles for the current search only.
     var movieTitle =[];
-     //A global array of rekease dates for the current search only.
+     //A global array of release dates for the current search only.
     var movieYear = [];
     //A global array of string images for the current search only.
     var moviePoster = [];
